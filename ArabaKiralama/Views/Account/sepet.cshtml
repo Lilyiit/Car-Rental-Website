@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/sepet.css">
+    <title>Shopping Cart</title>
+    <script>
+        // Yönlendirme işlemi için JavaScript fonksiyonu
+        function goToCheckout() {
+            window.location.href = '/account/yeni';
+        }
+    </script>
+</head>
+<body>
+    <!-- Kart Detayları Bölümü -->
+    <div class="card-details">
+        <h2>Card Details</h2>
+        <label>
+            <span>Name on Card</span>
+            <input type="text" placeholder="Full Name">
+        </label>
+        <label>
+            <span>Card Number</span>
+            <input type="text" placeholder="0000 0000 0000 0000">
+        </label>
+        <div class="split-input">
+            <label>
+                <span>Expiry Date</span>
+                <input type="text" placeholder="MM/YY">
+            </label>
+            <label>
+                <span>CVV</span>
+                <input type="text" placeholder="123">
+            </label>
+        </div>
+        <button onclick="goToCheckout()" class="checkout-btn">Checkout</button>
+    </div>
+
+    <div id="sepet-urunler">
+        <h3>Sepetiniz:</h3>
+        <ul id="urun-listesi"></ul>
+        <p id="toplam-fiyat">Toplam: ₺0.00</p>
+    </div>
+
+    <button onclick="goToCheckout()"
+        class="checkout-btn">Checkout</button>
+    </div>
+
+
+</body>
+</html>

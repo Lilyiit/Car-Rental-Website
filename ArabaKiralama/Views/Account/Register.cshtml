@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+@model ArabaKiralama1.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="/css/kayit.css">
+    @* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("RegisterUser", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="login-container">
+            <!-- login-container sınıfı CSS ile eşleştirildi -->
+            <h2>Kayıt Ol</h2>
+
+            <div class="input-group">
+                @Html.LabelFor(model => model.Username, "", new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Ad Soyad", required = "required" })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group">
+                @Html.LabelFor(model => model.Email, "", new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "E-posta adresi", required = "required", type = "email" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group">
+                @Html.LabelFor(model => model.Password, "", new { @class = "control-label" })
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Şifre", required = "required" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group">
+                @Html.LabelFor(model => model.Password, "", new { @class = "control-label" })
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Şifre tekrar", required = "required" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <button type="submit" class="email-login-btn">Kayıt Ol</button>
+            <p class="register-link">Zaten hesabınız var mı? <a href="/Account/Login">Giriş yap</a></p>
+        </div>
+    }
+
+
+</body>
+</html>

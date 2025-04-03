@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "2Y RENTAL";
+
+
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" href="/images/saydams.png" type="image/x-icon" />
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Giriş ve Kayıt Bölümü-->
+        <div class="auth-buttons">
+
+            @if (ViewBag.username != null)
+            {
+                <span class="welcome-message">Hoş geldiniz, @ViewBag.username</span>
+                <a href="/Account/Logout" class="auth-btn">Çıkış Yap</a>
+                <a href="/Basket/Index" class="auth-btn">Sepetim 🛒</a>
+
+            }
+            else
+            {
+                <a href="/Account/Login" class="auth-btn">Giriş Yap</a>
+                <a href="/Account/Register" class="auth-btn">Kayıt Ol</a>
+                <a href="/Basket/Index" class="auth-btn">Sepetim 🛒</a>
+            }
+        </div>
+
+        <!-- Banner-->
+        <div class="banner">
+            <div class="banner-text">
+                <h1>Hayalindeki Araba, Bir Tık Uzağında!</h1>
+                <p>Hızlı, Güvenli, Zahmetsiz Araç Kiralama</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel-slides">
+                    <div class="slide">
+                        <img src="/images/charger.jpg" alt="Araba 1">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/911.jpg" alt="Araba 2">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/auidi.jpg" alt="Araba 3">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/camaro.jpg" alt="Araba 4">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/g63.jpg" alt="Araba 5">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/huracan.jpg" alt="Araba 6">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/mclaren.jpg" alt="Araba 7">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/rs5.jpg" alt="Araba 8">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/merco.jpg" alt="Araba 9">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/tesla.jpg" alt="Araba 10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Araç Kategorileri Bölümü -->
+    <section class="categories">
+        <h2>Araç Kategorileri</h2>
+        <div class="categories-container">
+            <div class="category-card">
+                <img src="/images/bmw logo.png" alt="BMW">
+            </div>
+            <div class="category-card">
+                <img src="/images/mercedes logo.png" alt="Mercedes">
+            </div>
+            <div class="category-card">
+                <img src="/images/audi logo.png" alt="Audi">
+            </div>
+            <div class="category-card">
+                <img src="/images/ford logo.png" alt="Ford">
+            </div>
+            <div class="category-card">
+                <img src="/images/citroen logo.png" alt="Citroen">
+            </div>
+            <div class="category-card">
+                <img src="/images/renault logo.png" alt="Renault">
+            </div>
+            <div class="category-card">
+                <img src="/images/hyundai logo.png" alt="Hyundai">
+            </div>
+            <div class="category-card">
+                <img src="/images/vw logo.png" alt="VolksWagen">
+            </div>
+            <div class="category-card">
+                <img src="/images/volvo logo.png" alt="Volvo">
+            </div>
+            <div class="category-card">
+                <img src="/images/peugeot-logo.png" alt="Peugeot">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="rental-cards">
+        <h2>Öne Çıkan Araçlar</h2>
+        <div class="rental-cards-container">
+            @foreach (var car in Model)
+            {
+                <div class="rental-card">
+                    <img src="@car.ImageUrl" alt="@car.Brand @car.Model">
+                    <div class="rental-card-content">
+                        <span class="rental-category">@car.Engine</span>
+                        <h3>@car.Brand @car.Model</h3>
+                        <p>Aylık Kiralama Ücreti: @car.Price.ToString("C")</p>  <!-- Dinamik Fiyat -->
+                        @if (ViewBag.username != null)
+                        {
+                            <form method="post" action="/RentCar/RentCarCreate">
+                                <input type="hidden" name="carId" value="@car.CarID" />
+                                <input type="hidden" name="customerName" placeholder="Adınızı Girin" required value="@ViewBag.username" />
+                                <button type="submit" class="rental-btn">Kirala</button>
+                            </form>
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+</body>
+</html>

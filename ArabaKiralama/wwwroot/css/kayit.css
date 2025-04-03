@@ -1,0 +1,155 @@
+﻿/* Genel Ayarlar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #dceeff; /* Arka plan rengi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Kutusu */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Alanları */
+.input-group {
+    width: 100%; /* Genişlik tam yapıldı */
+    margin-bottom: 15px;
+    position: relative;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+
+button {
+    width: 100%; /* Buton genişliği tam */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.email-login-btn {
+    background: #0073e6;
+    color: #fff;
+    font-weight: bold;
+}
+
+    .email-login-btn:hover {
+        background: #005bb5;
+    }
+
+/* VEYA Bölümü */
+.divider {
+    margin: 30px 0;
+    position: relative;
+    font-size: 12px;
+    color: #999;
+    width: 100%;
+}
+
+    .divider span {
+        background: #fff;
+        padding: 0 10px;
+        position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #ccc;
+    }
+
+    .divider::before {
+        left: 0;
+    }
+
+    .divider::after {
+        right: 0;
+    }
+
+/* Sosyal Giriş Butonu */
+.social-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.google-login i {
+    color: #db4437;
+}
+
+.apple-login i {
+    color: #000;
+}
+
+.social-login:hover {
+    background: #f0f0f0;
+}
+
+/* Alt Link */
+.register-link {
+    margin: 15px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+    .register-link a {
+        color: #0073e6;
+        font-weight: bold;
+        text-decoration: none;
+    }
+/* Form İçeriğini Ortala */
+.login-container {
+    display: flex;
+    flex-direction: column; /* Elemanları dikey hizalar */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Elemanlar arasında boşluk */
+}
+
+/* H2 Başlık */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}

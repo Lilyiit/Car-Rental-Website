@@ -1,0 +1,103 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center; /* Sayfayı yatayda ortalar */
+    align-items: center; /* Sayfayı dikeyde ortalar */
+    height: 100vh; /* Sayfa yüksekliğini tamamen kullan */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 10%, transparent 10%), radial-gradient(#444cf7 10%, transparent 10%);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+}
+
+.shopping-cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: 100%; /* Sayfa yüksekliği kadar */
+    width: 100%; /* Sayfa genişliği kadar */
+    box-sizing: border-box;
+}
+
+.shopping-cart {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Formu genişliğini tam yapar */
+    max-width: 500px; /* Formun maksimum genişliğini sınırlandırır */
+}
+
+.card-details {
+    background: #1a73e8;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 100%; /* Formu genişliğini tam yapar */
+    max-width: 500px; /* Formun maksimum genişliğini sınırlandırır */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .card-details h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .card-details .card-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .card-details label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .card-details input {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        outline: none;
+    }
+
+        .card-details input:focus {
+            border: 2px solid white;
+            background: #eef3fd;
+        }
+
+    .card-details .split-input {
+        display: flex;
+        gap: 10px;
+    }
+
+    .card-details .checkout-btn {
+        background: white;
+        color: #1a73e8;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .card-details .checkout-btn:hover {
+            background: #eef3fd;
+            color: #0f5bb5;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
